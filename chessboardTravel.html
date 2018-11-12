@@ -1,0 +1,145 @@
+<html>
+<script>
+// function ChessboardTraveling(str) { 
+//     var numOfWaysToTravel = 0;
+//     var startingPointString = "";
+//     var endingPointString = "";
+//     var startingX = 0;
+//     var startingY = 0;
+//     var endingX = 0;
+//     var endingY = 0;
+//     var timesUp = 0;
+//     var timesRight = 0;
+    
+//     for(let i = 0; i < str.length; i++) {
+//         if(i === 1 || i === 3) {
+//             startingPointString += str[i];
+//         }
+//         else if (i === 6 || i === 8) {
+//             endingPointString += str[i];
+//         }
+//     }
+    
+//     for(let i = 0; i < startingPointString.length; i++) {
+//         startingX = startingPointString[0];
+//         startingY = startingPointString[1]
+//     }
+    
+//     for(let i = 0; i < endingPointString.length; i++) {
+//         endingX = endingPointString[0];
+//         endingY = endingPointString[1];
+//     }
+
+//     startingX = Number(startingX);
+//     startingY = Number(startingY);
+//     endingX = Number(endingX);
+//     endingY = Number(endingY);
+
+   
+//         for(var x = startingX; x < endingX; x++) {
+//             timesRight += 1;
+//             for(var y = startingY; y < endingY; y++) {
+//                timesUp += 1; 
+//             }
+//         }
+    
+//     console.log(timesUp + timesRight);
+
+//     // numOfWaysToTravel = (timesUp + timesRight);
+
+//     // return numOfWaysToTravel; 
+         
+// }
+
+function ChessboardTraveling(str) {
+    var chessboard = [
+        ["1.8", "2.8", "3.9", "4.8", "5.8", "6.8", "7.8", "8.8"],
+        ["1.7", "2.7", "3.8", "4.7", "5.7", "6.7", "7.7", "8.7"],
+        ["1.6", "2.6", "3.6", "4.6", "5.6", "6.6", "7.6", "8.6"],
+        ["1.5", "2.5", "3.5", "4.5", "5.5", "6.5", "7.5", "8.5"],
+        ["1.4", "2.4", "3.4", "4.4", "5.4", "6.4", "7.4", "8.4"],
+        ["1.3", "2.3", "3.3", "4.3", "5.3", "6.3", "7.3", "8.3"],
+        ["1.2", "2.2", "3.2", "4.2", "5.2", "6.2", "7.2", "8.2"],
+        ["1.1", "2.1", "3.1", "4.1", "5.1", "6.1", "7.1", "8.1"]
+    ];
+    var start = {};
+    var end = {};
+    var variations = [];
+
+    function stringOfNumsFromInput(inputString) {
+        var coordinates = {
+            start: "",
+            end:   ""
+        }
+        for(let i = 0; i < inputString.length; i++) {
+            if(i === 1 || i === 3) {
+                coordinates.start += inputString[i];
+            }
+            else if (i === 6 || i === 8) {
+                coordinates.end += inputString[i];
+            }
+        }
+        return coordinates;
+    }
+    function coordinates(inputString) {
+        var coordinates = {
+            x: "",
+            y: ""
+        }
+        for(let i = 0; i < inputString.length; i++) {
+        coordinates.x = Number(inputString[0]);
+        coordinates.y = Number(inputString[1]);
+        }
+        return coordinates;
+    }
+
+    coordinatesString = stringOfNumsFromInput(str);
+
+    start = coordinates(coordinatesString.start);
+    end = coordinates(coordinatesString.end);
+    
+    // console.log(start.x);
+    // console.log(start.y);
+    // console.log(end.x);
+    // console.log(end.y);
+
+    for(var x = chessboard.length; x > 0; x--) {
+        console.log(chessboard[(x-1)][0]);
+
+        // for(var y = chessboard[x-1].length; y > 0 ; y--)  {
+        //     console.log(chessboard[y-1][0]);
+        // }
+    }
+
+}
+
+ChessboardTraveling("(1 1)(3 3)");
+// OUTPUT should = 6
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

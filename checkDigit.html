@@ -1,0 +1,25 @@
+<html>
+	<script>
+function createCheckDigit(membershipId) {
+  	var checkDigit = membershipId.length;
+  	var sumOfDigits = null;
+  	if (checkDigit > 1) {
+  		for(var i = 0; i < checkDigit; i++) {
+  			sumOfDigits += Number(membershipId.charAt(i));
+  		}
+  		if(String(sumOfDigits).length > 1) {
+  			return createCheckDigit(String(sumOfDigits));
+  		}
+  		else {
+  			checkDigit = sumOfDigits;
+  			return checkDigit;
+  		}
+  	}
+  	else {
+  		return Number(membershipId);
+  	} 
+};
+
+console.log(createCheckDigit("4"));
+	</script>
+</html>
